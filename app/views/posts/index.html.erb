@@ -1,0 +1,22 @@
+<h1>Listing posts</h1>
+<hr /> <hr />
+	<% @posts.each do |post| %>
+		<h2>Nazwa postu</h2> 
+        <p><%= post.name %> </p> 
+        <h3>Tytuł postu</h3>
+        <p><%= post.title %></p> 
+        <h4>Zawartosc postu</h4>
+        <p><%= post.content %></p> <br>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
+      
+      <hr />
+    <% end %>
+  
+
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
